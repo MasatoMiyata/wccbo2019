@@ -1,0 +1,67 @@
+{
+    "建物全体のエネルギー消費量":[
+        "Primary Energy Use [GJ/min]",
+        "建物全体のエネルギー消費量 [GJ/min]"
+    ],
+    "外気温度":[
+        " Outdoor air Drybulb Temperature [C]",
+        "外気温度 [度]"
+    ],
+    "外気湿度":[
+        " Outdoor air Relative Humidity [%]",
+        "外気湿度[%]"
+    ],
+    "E2R2":[
+        "E2R2",
+        "E2R2"
+    ],
+    "ERR":[
+        "ERR",
+        "ERR"
+    ],
+    "DRR":[
+        "DRR",
+        "DRR"
+    ],
+    "空調熱源の消費電力":[
+        "Electricity of heat source system [kW]",
+        "空調熱源の消費電力[kW]"
+    ],
+    "空調機の消費電力":[
+        "Electricity of air conditioning system [kW]",
+        "空調機の消費電力[kW]"
+    ],
+    "コンセント電力":[
+        "Electricity of Tenant Plug [kW]",
+        "コンセント電力[kW]"
+    ],
+    "照明電力":[
+        "Electricity of Tenant Lighting [kW]",
+        "照明電力[kW]"
+    ],
+    "冷房負荷":[
+        "Chilled Water Supply Heat Flow [kW]",
+        "冷房負荷[kW]"
+    ],
+    "暖房負荷":[
+        "Hot Water Supply Heat Flow [kW]",
+        "暖房負荷[kW]"
+    ],
+    "吸収式冷温水発生機のガス消費量":[
+        "Absorption Chiller Gas Consumption [m3/h]",
+        "吸収式冷温水発生機のガス消費量[m3/h]"
+    ],
+    "空冷ヒートポンプの消費電力":[
+        "Air Source Heatpump Electricity [kW]",
+        "空冷ヒートポンプの消費電力[kW]"
+    ],
+    "冷水二次ポンプの消費電力":[
+        "Chilled Water Secondary Pump Electricity [kW]",
+        "冷水二次ポンプ[kW]"
+    ],
+    "温水二次ポンプの消費電力":[
+        "Hot Water Secondary Pump Electricity [kW]",
+        "温水二次ポンプ[kW]"
+    ]
+}
+
