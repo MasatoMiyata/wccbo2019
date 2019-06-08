@@ -1,67 +1,98 @@
 {
-    "建物全体のエネルギー消費量":[
+    "fig_建物全体のエネルギー消費量":[
+        "csv1",
         "Primary Energy Use [GJ/min]",
         "建物全体のエネルギー消費量 [GJ/min]"
     ],
-    "外気温度":[
+    "fig_外気温度":[
+        "csv1",
         " Outdoor air Drybulb Temperature [C]",
         "外気温度 [度]"
     ],
-    "外気湿度":[
+    "fig_外気湿度":[
+        "csv1",
         " Outdoor air Relative Humidity [%]",
         "外気湿度[%]"
     ],
-    "E2R2":[
+    "fig_E2R2":[
+        "csv1",
         "E2R2",
         "E2R2"
     ],
-    "ERR":[
+    "fig_ERR":[
+        "csv1",
         "ERR",
         "ERR"
     ],
-    "DRR":[
+    "fig_DRR":[
+        "csv1",
         "DRR",
         "DRR"
     ],
-    "空調熱源の消費電力":[
+    "fig_空調熱源の消費電力":[
+        "csv1",
         "Electricity of heat source system [kW]",
         "空調熱源の消費電力[kW]"
     ],
-    "空調機の消費電力":[
+    "fig_空調機の消費電力":[
+        "csv1",
         "Electricity of air conditioning system [kW]",
         "空調機の消費電力[kW]"
     ],
-    "コンセント電力":[
+    "fig_コンセント電力":[
+        "csv1",
         "Electricity of Tenant Plug [kW]",
         "コンセント電力[kW]"
     ],
-    "照明電力":[
+    "fig_照明電力":[
+        "csv1",
         "Electricity of Tenant Lighting [kW]",
         "照明電力[kW]"
     ],
-    "冷房負荷":[
+    "fig_冷房負荷":[
+        "csv1",
         "Chilled Water Supply Heat Flow [kW]",
         "冷房負荷[kW]"
     ],
-    "暖房負荷":[
+    "fig_暖房負荷":[
+        "csv1",
         "Hot Water Supply Heat Flow [kW]",
         "暖房負荷[kW]"
     ],
-    "吸収式冷温水発生機のガス消費量":[
+    "fig_吸収式冷温水発生機のガス消費量":[
+        "csv1",
         "Absorption Chiller Gas Consumption [m3/h]",
         "吸収式冷温水発生機のガス消費量[m3/h]"
     ],
-    "空冷ヒートポンプの消費電力":[
+    "fig_空冷ヒートポンプの消費電力":[
+        "csv1",
         "Air Source Heatpump Electricity [kW]",
         "空冷ヒートポンプの消費電力[kW]"
     ],
-    "冷水二次ポンプの消費電力":[
+    "fig_冷水二次ポンプの消費電力":[
+        "csv1",
         "Chilled Water Secondary Pump Electricity [kW]",
         "冷水二次ポンプ[kW]"
     ],
-    "温水二次ポンプの消費電力":[
+    "fig_温水二次ポンプの消費電力":[
+        "csv1",
         "Hot Water Secondary Pump Electricity [kW]",
         "温水二次ポンプ[kW]"
+    ],
+    "fig_在室者数":[
+        "csv4",
+        " Occupant number",
+        "在室者数"
+    ],
+    "fig_不満足者数":[
+        "csv4",
+        " Dissatisfied number",
+        "不満足者数"
+    ],
+    "fig_不満足者率":[
+        "csv4",
+        " Dissatisfied rate",
+        "不満足者率"
     ]
 }
 

@@ -1,59 +1,16 @@
 #%%
 import pandas as pd
 import numpy as np
-import pickle
-from datetime import time
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import json
+import picklefileRW as pk
+from datetime import time
 
 # グラフ文字化け対策（環境に合わせてフォント名を変えてください）
 mpl.rcParams['font.family'] = 'Noto Sans CJK JP'
 plt.rcParams['grid.linestyle']='--'
 plt.rcParams['grid.linewidth'] = 0.5
-
-# Macで4GB以上のバイナリファイルを読み込むための措置
-class MacOSFile(object):
-
-    def __init__(self, f):
-        self.f = f
-
-    def __getattr__(self, item):
-        return getattr(self.f, item)
-
-    def read(self, n):
-        # print("reading total_bytes=%s" % n, flush=True)
-        if n >= (1 << 31):
-            buffer = bytearray(n)
-            idx = 0
-            while idx < n:
-                batch_size = min(n - idx, 1 << 31 - 1)
-                # print("reading bytes [%s,%s)..." % (idx, idx + batch_size), end="", flush=True)
-                buffer[idx:idx + batch_size] = self.f.read(batch_size)
-                # print("done.", flush=True)
-                idx += batch_size
-            return buffer
-        return self.f.read(n)
-
-    def write(self, buffer):
-        n = len(buffer)
-        print("writing total_bytes=%s..." % n, flush=True)
-        idx = 0
-        while idx < n:
-            batch_size = min(n - idx, 1 << 31 - 1)
-            print("writing bytes [%s, %s)... " % (idx, idx + batch_size), end="", flush=True)
-            self.f.write(buffer[idx:idx + batch_size])
-            print("done.", flush=True)
-            idx += batch_size
-
-def pickle_dump(obj, file_path):
-    with open(file_path, "wb") as f:
-        return pickle.dump(obj, MacOSFile(f), protocol=pickle.HIGHEST_PROTOCOL)
-
-
-def pickle_load(file_path):
-    with open(file_path, "rb") as f:
-        return pickle.load(MacOSFile(f))
 
 
 def makeplot(df, tag, name, ylabel):
@@ -69,20 +26,20 @@ def makeplot(df, tag, name, ylabel):
 
 #%%
 
+# バイナリファイルの読み込み
+df01 = pk.pickle_load("WCCBO_BEMSdata_CSV1.binaryfile")
+df02 = pk.pickle_load("WCCBO_BEMSdata_CSV2.binaryfile")
+df03 = pk.pickle_load("WCCBO_BEMSdata_CSV3.binaryfile")
+df04 = pk.pickle_load("WCCBO_BEMSdata_CSV4.binaryfile")
+
+
+#%%
+
 # 一次エネルギー換算係数
 ekw1 = 9.97  # 9.970 MJ/kWh　＜8時から22時まで＞
 ekw2 = 9.28  # 9.280 MJ/kWh　＜22時から8時まで＞
 ekw3 = 9.76  # 9.760 MJ/kWh　＜終日＞
 egs  = 45     # 45 MJ/Nm3
-
-# データの読み込み
-df01 = pickle_load("WCCBO_BEMSdata_CSV1.binaryfile")
-# df02 = pickle_load("WCCBO_BEMSdata_CSV2.binaryfile")
-# df03 = pickle_load("WCCBO_BEMSdata_CSV3.binaryfile")
-# df04 = pickle_load("WCCBO_BEMSdata_CSV4.binaryfile")
-
-
-#%%
 
 # 各設備のエネルギー消費量
 E_ref   = df01['Electricity of heat source system [kW]']
@@ -103,6 +60,14 @@ with open('graphList.json', encoding='utf-8') as f:
 
 # グラフを生成
 for item in figurelist:
-    fig = makeplot(df01, figurelist[item][0], item, figurelist[item][1])
+
+    if figurelist[item][0] == "csv1":
+        fig = makeplot(df01, figurelist[item][1], item, figurelist[item][2])
+    elif figurelist[item][0] == "csv2":
+        fig = makeplot(df02, figurelist[item][1], item, figurelist[item][2])
+    elif figurelist[item][0] == "csv3":
+        fig = makeplot(df03, figurelist[item][1], item, figurelist[item][2])
+    elif figurelist[item][0] == "csv4":
+        fig = makeplot(df04, figurelist[item][1], item, figurelist[item][2])
 
 plt.show()
