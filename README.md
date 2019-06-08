@@ -22,7 +22,7 @@ What is WCCBO?  →　http://www.wccbo.org/
  * 変数 timedelta の値を変えることにより、抽出する時間間隔を変えることができます。  
    オリジナルデータは1分ですが、1分間隔のままbinary化するには3時間程度かかります。  
    10分間隔で抽出すると、15分程度でbinary化が完了します。  
- * macでは4GB以上のbinary fileが生成できない不具合があるため、mac用に「picklefileRW.py」を作成し読み込ませています。
+ * macでは4GB以上のbinary fileが生成できない不具合があるため、mac用に「picklefileRW.py」を作成し読み込ませています。  
    　→　このままのプログラムで　Windows 10 （python 3.7） でも正常に処理ができることを確認（2019/6/8追記）  
   
 [2] makeFigures.py  
